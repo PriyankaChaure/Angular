@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        <h2>WELCOME TO ANGULAR </h2>
+      </div> 
+      <div>
+        <hr>
+        <a class="btn btn-danger" [routerLink]="['/prachi']">Home Page</a>
+        <a class="btn btn-primary" [routerLink]="['/prod']">Product</a>
+        <a class="btn btn-warning" [routerLink]="['/customer']">Customer</a>
+        <a class="btn btn-success" [routerLink]="['/dirs']">Directives</a>
+        <a class="btn btn-dark" [routerLink]="['/data/bind']">DataBinding</a>
+        <a class="btn btn-light" [routerLink]="['/wel']">Welcome</a>
+        <a class="btn btn-primary" [routerLink]="['/pipe']">Pipes</a>
+      </div>
+      <diV>  <hr><router-outlet /></diV>  <hr>
+      <div>&copy; All Rights Reserved To Priyanka!!!</div>
+    </div>
+  </div>
+</div>

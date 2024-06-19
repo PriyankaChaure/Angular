@@ -1,0 +1,12 @@
+input.ng-invalid,textarea.ng-invalid
+{
+    border-right: 2px solid red;
+}
+input.ng-valid,textarea.ng-valid
+{
+    border-right: 2px solid green;
+}
+.error
+{
+    color: red;
+}

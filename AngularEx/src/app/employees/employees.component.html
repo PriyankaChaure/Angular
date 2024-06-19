@@ -1,0 +1,30 @@
+
+<h2>Employee List</h2>
+<a  [routerLink]="['/empnew']">Create</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>EmployeeId</th>
+            <th>EmployeeName</th>
+            <th>Address</th>
+            <th>EmailId</th>
+            <th>Mobile NO</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let temp of Emp">
+            <td>{{temp.empId}}</td>
+            <td>{{temp.empName}}</td>
+            <td>{{temp.address}}</td>
+            <td>{{temp.emailId}}</td>
+            <td>{{temp.mobileNo}}</td>
+            <td>{{temp.salary}}</td>
+            <td>{{temp.deptId}}</td>
+            <td ><a [routerLink]="['/empedit',temp.empId,temp.empName]">Edit</a></td>
+            <td ><a [routerLink]="['/empdelete',temp.empId,temp.empName]">Delete</a></td>
+        </tr>
+    </tbody>
+</table>

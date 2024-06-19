@@ -1,0 +1,8 @@
+<h2>Data Binding Examples</h2>
+<h3 [innerText]="msg"></h3>
+<input type="text"  [value]="msg" [size]="val"/>
+<input type="button" value="click" (click)="sayhello()"/><br>
+One Way:<input type="text" [ngModel]="msg" /><br>
+Two Way:<input type="text" [(ngModel)]="msg"/><br>
+Enter value:<input type="text" #inputval (change)="Show(inputval.value)"/>
+<input type="button" value="show" (click)="Show(inputval.value)"/>

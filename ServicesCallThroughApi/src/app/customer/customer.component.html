@@ -1,0 +1,26 @@
+<h2>Customer List</h2>
+<a  [routerLink]="['/newcust']">Create</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>CustomerId</th>
+            <th>CustomerName</th>
+            <th>Address</th>
+            <th>EmailId</th>
+            <th>Mobile NO</th>
+            <th>Credit Limit</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let temp of cust">
+            <td>{{temp.customerID}}</td>
+            <td>{{temp.customerName}}</td>
+            <td>{{temp.address}}</td>
+            <td>{{temp.emailID}}</td>
+            <td>{{temp.mobileNo}}</td>
+            <td>{{temp.creditLimit}}</td>
+            <td ><a [routerLink]="['/custdetails',temp.customerID,temp.customerName]">Details</a></td>
+        </tr>
+    </tbody>
+</table>

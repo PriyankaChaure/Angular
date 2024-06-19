@@ -1,0 +1,84 @@
+<h2>New Employee Form!</h2>
+<form [formGroup]="empcreateform" (ngSubmit)="CreateEmp()">
+    <div>
+        <label>Employee Name</label>
+        <div>
+            <input type="text" formControlName="empName" required #cn/>
+            <!-- {{cn.className}} -->
+             <!-- <div class="error" *ngIf="empcreateform.controls['empName'].invalid && (empcreateform.controls['empName'].dirty || empcreateform.controls['empName'].touched)">
+                Employee Name Required!
+             </div> -->
+        </div>
+    </div>
+    <div>
+        <label>Address</label>
+        <div>
+            <textarea formControlName="address"></textarea>
+            <!-- <div class="error" *ngIf="empcreateform.controls['address'].invalid && (empcreateform.controls['address'].dirty || empcreateform.controls['address'].touched)">
+                <span [hidden]="!empcreateform.controls.address.hasError('required')">
+                    Address Required!
+                </span>
+                <span [hidden]="!empcreateform.controls.address.hasError('minlength')">
+                    Minimum 5 Charater Length
+                </span>
+                <span [hidden]="!empcreateform.controls.address.hasError('maxlength')">
+                    Maximum 15 character Length
+                </span>
+            </div> -->
+        </div>
+    </div>
+    <div>
+        <label>EmailId</label>
+        <div>
+            <input type="text" formControlName="emailId"/>
+            <!-- <div class="error" *ngIf="empcreateform.controls['emailId'].invalid && (empcreateform.controls['emailId'].dirty || empcreateform.controls['emailId'].touched)">
+                <span [hidden]="!empcreateform.controls.emailId.hasError('required')">
+                    EmailID Required!
+                </span>
+                <span [hidden]="!empcreateform.controls.emailId.hasError('email')">
+                    Invalid EmailID
+                </span>
+            </div> -->
+        </div>
+    </div>
+    <div>
+        <label>MobileNo</label>
+        <div>
+            <input type="text" formControlName="mobileNo"/>
+            <!-- <div class="error" *ngIf="empcreateform.controls['mobileNo'].invalid && (empcreateform.controls['mobileNo'].dirty || empcreateform.controls['mobileNo'].touched)">
+                <span [hidden]="!empcreateform.controls['mobileNo'].hasError('required')">
+                    Mobile No Required!
+                </span>
+                <span [hidden]="!empcreateform.controls['mobileNo'].hasError('pattern')">
+                    10 Digits Required!
+                </span>
+            </div> -->
+        </div>
+    </div>
+    <div>
+        <label>Salary</label>
+        <div>
+            <input type="text" formControlName="salary"/>
+            <!-- <div class="error" *ngIf="empcreateform.controls['creditLimit'].invalid && (empcreateform.controls['salary'].dirty || empcreateform.controls['salary'].touched)">
+                <span [hidden]="!empcreateform.controls['creditLimit'].hasError('required')">
+                    Credit Limit Required!
+                </span>
+                <span [hidden]="!empcreateform.controls['creditLimit'].hasError('min')">
+                   Minimum 1000
+                </span>
+                <span [hidden]="!empcreateform.controls['creditLimit'].hasError('max')">
+                    Minimum 10000 
+                </span>
+            </div> -->
+        </div>
+    </div>
+    <div>
+        <label>Department</label>
+         <select formControlName="deptId">
+             <option *ngFor="let temp of Dept" value="{{temp.deptId}}">{{temp.deptName}}</option>
+         </select>
+    </div>
+    <div>
+        <input type="submit" value="save" [disabled]="empcreateform.invalid"/>
+    </div>
+</form>

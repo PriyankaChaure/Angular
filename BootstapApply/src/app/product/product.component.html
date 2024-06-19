@@ -1,0 +1,63 @@
+<h2>{{title}}</h2>
+<input type="text" value="{{title}}"/>
+Amount:{{quantity*price}}
+<h3>{{SayHello()}}</h3>
+<input type="button" value="{{flag?'Hide':'show'}}" (click)="toggle()"/>
+<table border="1" *ngIf="flag">
+    <thead>
+        <tr>
+            <th>Sr.No</th>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Mfg Name</th>
+            <th>Price</th>
+            <th>Actions</th>
+            <!-- <th>Rating</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let temp of Prods;let ind=index">
+            <td>{{ind}}</td>
+            <td>{{temp.productID}}</td>
+            <td>{{temp.productName}}</td>
+            <td>{{temp.mfgName}}</td>
+            <td>{{temp.price}}</td>
+            <td>
+                <a [routerLink]="['/editprod',temp.productID]">Edit|</a>
+                <a [routerLink]="['/deleteprod',temp.productID]">Delete</a>
+            </td>
+
+            <!-- <td><star [noOfStars]="temp.Rating"></star></td> -->
+        </tr>
+        <!-- <tr>
+            <td>1</td>
+            <td>Mouse</td>
+            <td>Intex</td>
+            <td>450</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Computer</td>
+            <td>Dell</td>
+            <td>4500</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Keyboard</td>
+            <td>Logitech</td>
+            <td>830</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Motherboard</td>
+            <td>Intel</td>
+            <td>3500</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Router</td>
+            <td>Cabs</td>
+            <td>994</td>
+        </tr> -->
+    </tbody>
+</table>

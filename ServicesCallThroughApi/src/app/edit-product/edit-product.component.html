@@ -1,0 +1,26 @@
+<p>edit-product works!</p>
+<h2>Edit Form</h2>
+<form [formGroup]="cfrm" (ngSubmit)="UpdateProduct()">
+    <input type="hidden" formControlName="productID"/>
+    <div>
+        <label>Product Name:</label>
+        <div>
+            <input type="text" formControlName="productName"/>
+        </div>
+    </div>
+    <div>
+        <label>MFG Name:</label>
+        <div>
+            <textarea formControlName="mfgName"></textarea>
+        </div>
+    </div>
+    <div>
+        <label>Product Price:</label>
+        <div>
+            <input type="text" formControlName="price"/>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Update"/>
+    </div>
+</form>

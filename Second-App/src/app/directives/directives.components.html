@@ -1,0 +1,54 @@
+<h2>Directives</h2>
+<input type="button" value="click" (click)="toggle()"/>
+<h2 *ngIf="flag1">Hi Priyanka!</h2>
+
+<product></product>
+<br>
+Enter Value:<input type="number" [(ngModel)]="val1" [disabled]="flag1"/><br>
+value is:{{val1}}
+<ul [ngSwitch]="val1">
+    <li *ngSwitchCase="1">First Li</li>
+    <li *ngSwitchCase="2">Second Li</li>
+    <li *ngSwitchCase="3">Third Li</li>
+    <li *ngSwitchCase="4">Fourth Li</li>
+    <li *ngSwitchCase="5">Fifth Li</li>
+    <li *ngSwitchDefault> Sixth Li</li>
+</ul>
+
+<span *ngIf="flag1;then first;else second"></span>
+<ng-template #first>
+    <div>
+        <ul>
+            <li>Angular</li>
+            <li>Knockout</li>
+            <li>Backbone</li>
+            <li>vue</li>
+        </ul>
+    </div>
+</ng-template>
+
+<ng-template #second>
+    <div>
+        <ol>
+            <li>Asp .net Mvc</li>
+            <li>Asp .net Core</li>
+            <li>Java Struts</li>
+            <li>Spring Boot</li>
+            <li>Dajango</li>
+            <li>Larval </li>
+            <li>Ruby on Rails </li>
+        </ol>
+    </div>
+</ng-template>
+
+<div [ngStyle]="{'background-color':flag1?'green':'red'}">
+    Welcome to Div
+</div>
+<br>
+<div [ngClass]="{box:flag1}">
+    Box div called!!!
+</div>
+<br>
+<div [hidden]="flag1">
+    Hidden div used to demo!!!
+</div>

@@ -1,0 +1,21 @@
+<p>delete-product works!</p>
+<h2>Are you sure you want to delete product!</h2>
+<table border="1">
+    <tr>
+        <td>ProductID:</td>
+        <td>{{productrec.productID}}</td>
+    </tr>
+    <tr>
+        <td>Product Name:</td>
+        <td>{{productrec.productName}}</td>
+    </tr>
+    <tr>
+        <td>Mfg Name:</td>
+        <td>{{productrec.mfgName}}</td>
+    </tr>
+    <tr>
+        <td>Price:</td>
+        <td>{{productrec.price}}</td>
+    </tr>
+</table>
+<input type="button" value="Delete" (click)="DeleteProduct()"/>

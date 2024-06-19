@@ -1,0 +1,46 @@
+<h2>Edit Form</h2>
+<form [formGroup]="empeditfrm" (ngSubmit)="UpdateEmployee()">
+    <input type="hidden" formControlName="empID"/>
+    <div>
+        <label>Employee Name</label>
+        <div>
+            <input type="text" formControlName="empName"/>
+        </div>
+    </div>
+    <div>
+        <label> Address</label>
+        <div>
+            <textarea formControlName="address"></textarea>
+        </div>
+    </div>
+    <div>
+        <label> EmailID</label>
+        <div>
+            <input type="text" formControlName="emailId"/>
+        </div>
+    </div>
+    <div>
+        <label> MobileNo</label>
+        <div>
+            <input type="text" formControlName="mobileNo"/>
+        </div>
+    </div>
+    <div>
+        <label> salary</label>
+        <div>
+            <input type="text" formControlName="salary"/>
+        </div>
+    </div>
+    <div>
+        <label>Department</label>
+        <div>
+            <select formControlName="deptId">
+                <option *ngFor="let temp of Dept" value="{{temp.deptId}}">{{temp.deptName}}</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Update"/>
+    </div>
+</form>
+

@@ -1,0 +1,78 @@
+<h2>NewCustomer Form!</h2>
+<form [formGroup]="custform" (ngSubmit)="CreateCust()">
+    <div>
+        <label>Customer Name</label>
+        <div>
+            <input type="text" formControlName="customerName" required #cn/>
+            <!-- {{cn.className}} -->
+             <div class="error" *ngIf="custform.controls['customerName'].invalid && (custform.controls['customerName'].dirty || custform.controls['customerName'].touched)">
+                Customer Name Required!
+             </div>
+        </div>
+    </div>
+    <div>
+        <label>Address</label>
+        <div>
+            <textarea formControlName="address"></textarea>
+            <div class="error" *ngIf="custform.controls['address'].invalid && (custform.controls['address'].dirty || custform.controls['address'].touched)">
+                <span [hidden]="!custform.controls.address.hasError('required')">
+                    Address Required!
+                </span>
+                <span [hidden]="!custform.controls.address.hasError('minlength')">
+                    Minimum 5 Charater Length
+                </span>
+                <span [hidden]="!custform.controls.address.hasError('maxlength')">
+                    Maximum 15 character Length
+                </span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>EmailId</label>
+        <div>
+            <input type="text" formControlName="emailID"/>
+            <div class="error" *ngIf="custform.controls['emailID'].invalid && (custform.controls['emailID'].dirty || custform.controls['emailID'].touched)">
+                <span [hidden]="!custform.controls.emailID.hasError('required')">
+                    EmailID Required!
+                </span>
+                <span [hidden]="!custform.controls.emailID.hasError('email')">
+                    Invalid EmailID
+                </span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>MobileNo</label>
+        <div>
+            <input type="text" formControlName="mobileNo"/>
+            <div class="error" *ngIf="custform.controls['mobileNo'].invalid && (custform.controls['mobileNo'].dirty || custform.controls['mobileNo'].touched)">
+                <span [hidden]="!custform.controls['mobileNo'].hasError('required')">
+                    Mobile No Required!
+                </span>
+                <span [hidden]="!custform.controls['mobileNo'].hasError('pattern')">
+                    10 Digits Required!
+                </span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>Credit Limit</label>
+        <div>
+            <input type="text" formControlName="creditLimit"/>
+            <div class="error" *ngIf="custform.controls['creditLimit'].invalid && (custform.controls['creditLimit'].dirty || custform.controls['creditLimit'].touched)">
+                <span [hidden]="!custform.controls['creditLimit'].hasError('required')">
+                    Credit Limit Required!
+                </span>
+                <span [hidden]="!custform.controls['creditLimit'].hasError('min')">
+                   Minimum 1000
+                </span>
+                <span [hidden]="!custform.controls['creditLimit'].hasError('max')">
+                    Minimum 10000 
+                </span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="save" [disabled]="custform.invalid"/>
+    </div>
+</form>
